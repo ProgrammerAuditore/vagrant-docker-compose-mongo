@@ -6,7 +6,7 @@
 
 Vagrant.configure("2") do |config|
     # Establecer el nombre de la caja 
-    config.vm.define "proyecto-mongo"
+    config.vm.define "box-vagrant-mongodb"
     #config.vm.hostname = "abc"
 
     # Usar la caja de Ubuntu 18.04LTS
