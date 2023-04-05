@@ -2,6 +2,16 @@
 Este repositorio contiene un proyecto con acciones/funciones de un base de datos para MongoDB <br>
 Usango Vagrant + Docker-compose
 
+# Requisitos funcionales
+Para hacer funcionar la aplicación se requiere tener instalado, como requisito lo siguiente:
+* NodeJS +14.x.x (o superior)
+* npm
+* docker
+* docker-compose
+* vagrant
+* MongoDB
+* Browser (Google Chrome, Firefox, etc.)
+
 # Acceder a servidor MongoDB
 Este comando accede al servidor de MongoDB <br>
 con autenticación con los siguientes datos:
@@ -19,15 +29,6 @@ con autenticación con los siguientes datos:
    mongo mongodb://user_vagrant:pass@localhost:27025/db_vagrant?authSource=admin
 ```
 
-# Requisitos funcionales
-Para hacer funcionar la aplicación se requiere tener instalado, como requisito lo siguiente:
-* NodeJS +14.x.x (o superior)
-* npm
-* docker
-* docker-compose
-* vagrant
-* MongoDB
-* Browser (Google Chrome, Firefox, etc.)
 
 ## Correr aplicación de forma automatizada (Usando docker-compose)
 Es necesario ejecutar el siguiente comando desde donde se encuetra el archivo **docker-compose.yml** 
