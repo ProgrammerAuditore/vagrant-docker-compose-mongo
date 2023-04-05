@@ -56,6 +56,10 @@ Es necesario ejecutar el siguiente comando desde donde se encuetra el archivo **
    vagrant reload --provision
 ```
 
+##### NOTA
+create-user.js ; Se ejecutará solo si la carpeta __/data/db__ <br>
+no contenga contenido de MongoDB (es decir, si no se ha inicializado MongoDB) 
+
 # Crear un nuevo usario
 Este comando sirve para crear nuevos usuarios usando la base de datos admin
 ```shell
