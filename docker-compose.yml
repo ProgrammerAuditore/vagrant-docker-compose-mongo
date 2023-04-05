@@ -1,0 +1,20 @@
+version: '3'
+
+services:
+  # Base de datos mongoDB
+  service_db:
+    image: mongo:4.0
+    container_name: db-mongodb
+    environment:
+      MONGO_INITDB_ROOT_USERNAME: root
+      MONGO_INITDB_ROOT_PASSWORD: secret
+      MONGO_INITDB_DATABASE: admin
+    volumes:
+      - /home/vagrant/data:/data/db
+      - /home/vagrant/workspace/data/create-user.js:/docker-entrypoint-initdb.d/create-user.js:ro
+    ports:
+      - "27025:27017"
+    #command: mongod --dbpath /data/db --repair
+    #command: mongod --port 27080 --dbpath /data/db
+    command: mongod --bind_ip_all --auth
+    
