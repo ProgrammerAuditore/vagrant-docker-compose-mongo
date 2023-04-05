@@ -63,8 +63,8 @@ Este comando sirve para crear nuevos usuarios usando la base de datos admin
 ```
 
 # Acceder a la base de datos
-Este comando accede a la base de datos de `music_app` usando mongo <br>
-con autenticación con los siguientes datos:
+Este comando accede a la base de datos de usando el usuario creado previamente. <br>
+Usando MongoDB con los siguientes datos de autenticación:
 +  Usuario: myuser
 +  Contraseña: mypassword
 +  Host: localhost
