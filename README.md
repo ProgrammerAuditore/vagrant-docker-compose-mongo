@@ -1,4 +1,4 @@
-# CRUD de mascotas
+# Vagrant + Docker-compose + MongoDB
 Este repositorio contiene un proyecto con acciones/funciones de un base de datos para MongoDB <br>
 Usango Vagrant + Docker-compose
 
@@ -65,13 +65,13 @@ Este comando sirve para crear nuevos usuarios usando la base de datos admin
 # Acceder a la base de datos
 Este comando accede a la base de datos de `music_app` usando mongo <br>
 con autenticación con los siguientes datos:
-+  Usuario: app_user
-+  Contraseña: app_passord
++  Usuario: myuser
++  Contraseña: mypassword
 +  Host: localhost
 +  Puerto: 27025
-+  Base de datos: music_app
-+  Autenticacion para: music_app
++  Base de datos: mydatabase
++  Autorización: admin
 
 ```shell
-   mongo mongodb://myuser:mypassword@localhost:27025/app_db?authSource=admin
+   mongo mongodb://myuser:mypassword@localhost:27025/mydatabase?authSource=admin
 ```
