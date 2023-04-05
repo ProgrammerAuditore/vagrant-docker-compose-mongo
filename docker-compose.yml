@@ -13,7 +13,7 @@ services:
       - /home/vagrant/data:/data/db
       - /home/vagrant/workspace/data/create-user.js:/docker-entrypoint-initdb.d/create-user.js:ro
     ports:
-      - "27025:27017"
+      - "27027:27017"
     #command: mongod --dbpath /data/db --repair
     #command: mongod --port 27080 --dbpath /data/db
     command: mongod --bind_ip_all --auth
