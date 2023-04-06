@@ -24,11 +24,22 @@ con autenticación con los siguientes datos:
 ```
 
 # Acceder a la base de datos con usuario por defecto (usario user_vagrant)
+Este comando se usa para interior del contenedor docker, es decir, para que los servicios <br>
+del docker-compose se puedan comunicar entre servicio __`service_db`__ y __`service_mongoose`__
+
+**NOTA** 
+Este URI `mongodb://user_vagrant:pass@service_db/db_vagrant?authSource=admin` es la que se usa por defecto.
+
+```shell
+   mongo mongodb://user_vagrant:pass@service_db/db_vagrant?authSource=admin
+```
+
+# Acceder a la base de datos con usuario por defecto (usario user_vagrant)
+Este comando se usa para fuera del contenedor docker
 
 ```shell
    mongo mongodb://user_vagrant:pass@localhost:2755/db_vagrant?authSource=admin
 ```
-
 
 ## Correr aplicación de forma automatizada (Usando docker-compose)
 Es necesario ejecutar el siguiente comando desde donde se encuetra el archivo **docker-compose.yml** 
