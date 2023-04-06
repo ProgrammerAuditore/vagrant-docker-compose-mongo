@@ -15,7 +15,7 @@ services:
       # no contenga contenido de MongoDB (es decir, si no se ha inicializado MongoDB) 
       - /home/vagrant/workspace/data/create-user.js:/docker-entrypoint-initdb.d/create-user.js:ro
     ports:
-      - "27027:27017"
+      - "27077:27017"
     #command: mongod --dbpath /data/db --repair
     #command: mongod --port 27080 --dbpath /data/db
     command: mongod --bind_ip_all --auth

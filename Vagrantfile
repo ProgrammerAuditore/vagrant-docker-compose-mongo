@@ -22,7 +22,7 @@ Vagrant.configure("2") do |config|
     owner: "root", group: "root", create: true, disabled: true
 
     # Exponer el puerto interior de la caja ** Para MongoDB  **
-    config.vm.network "forwarded_port", guest: 27027 , host: 27027, auto_correct: true
+    config.vm.network "forwarded_port", guest: 27077 , host: 27077, auto_correct: true
     
     # Instalar docker y descagar imagen de docker (node:14-alpine)
     # *OJO* : Corre solo una vez usando `vagrant up`
