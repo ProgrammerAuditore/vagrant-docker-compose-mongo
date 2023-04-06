@@ -21,6 +21,9 @@ Vagrant.configure("2") do |config|
     config.vm.synced_folder "./data", "/home/vagrant/data", 
     owner: "root", group: "root", create: true, disabled: true
 
+    # Exponer el puerto interior de la caja ** Para Mongoose App  **
+    config.vm.network "forwarded_port", guest: 3077 , host: 3077, auto_correct: true
+
     # Exponer el puerto interior de la caja ** Para MongoDB  **
     config.vm.network "forwarded_port", guest: 27077 , host: 27077, auto_correct: true
     
@@ -28,7 +31,7 @@ Vagrant.configure("2") do |config|
     # *OJO* : Corre solo una vez usando `vagrant up`
     config.vm.provision "install-docker",
         type: "docker",
-        images: ["mongo:4.0"]
+        images: ["mongo:4.0","node:14.21-alpine"]
     
     #config.vm.provider "vmware_fusion" do |v|
     #    v.vmx["vhv.enable"] = "TRUE"

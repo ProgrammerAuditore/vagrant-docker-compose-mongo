@@ -1,2 +1,3 @@
 .vagrant/
 .git/
+mongoose/node_modules
