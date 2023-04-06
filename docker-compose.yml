@@ -5,6 +5,8 @@ services:
   service_db:
     image: mongo:4.0
     container_name: db-mongodb
+    networks:
+      - app-network
     environment:
       MONGO_INITDB_ROOT_USERNAME: root
       MONGO_INITDB_ROOT_PASSWORD: secret
@@ -16,11 +18,6 @@ services:
       - /home/vagrant/workspace/data/create-user.js:/docker-entrypoint-initdb.d/create-user.js:ro
     ports:
       - "2755:27017"
-    healthcheck:
-      test: 'mongo --eval "db.runCommand({ ping: 1 })"'
-      interval: 30s
-      timeout: 10s
-      retries: 5
     #command: mongod --dbpath /data/db --repair
     #command: mongod --port 27080 --dbpath /data/db
     command: mongod --bind_ip_all --auth
@@ -28,6 +25,8 @@ services:
   service_mongoose:
     image: node:14.21-alpine
     container_name: app-mongoose
+    networks:
+      - app-network
     build: 
         context: ./mongoose
         dockerfile: mongoose.Dockerfile
@@ -36,13 +35,12 @@ services:
       - /home/max98/workspace/mongoose/node_modules
     ports:
       - "3055:3055"
-    healthcheck:
-      test: ["CMD", "curl", "-f", "http://localhost:3055"]
-      interval: 30s 
-      timeout: 10s
-      retries: 5
     depends_on:
-      - service_api
+      - service_db
     links:
-      - service_api
+      - service_db
     command: npm run dev
+
+networks:
+  app-network:
+    driver: bridge
