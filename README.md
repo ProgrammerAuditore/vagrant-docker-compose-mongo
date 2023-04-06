@@ -23,7 +23,7 @@ con autenticación con los siguientes datos:
    mongo -u root -p secret  --port 2755
 ```
 
-# Acceder a la base de datos con usuario por defecto (usario user_vagrant)
+# Acceder a la base de datos con usuario por defecto dentro de docker-compose (usario user_vagrant)
 Este comando se usa para interior del contenedor docker, es decir, para que los servicios <br>
 del docker-compose se puedan comunicar entre servicio `service_db` y `service_mongoose`
 
@@ -34,7 +34,7 @@ Este URI `mongodb://user_vagrant:pass@service_db/db_vagrant?authSource=admin` es
    mongo mongodb://user_vagrant:pass@service_db/db_vagrant?authSource=admin
 ```
 
-# Acceder a la base de datos con usuario por defecto (usario user_vagrant)
+# Acceder a la base de datos con usuario por defecto fuera de docker-compose (usario user_vagrant)
 Este comando se usa para fuera del contenedor docker
 
 ```shell
