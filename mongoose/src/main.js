@@ -11,7 +11,7 @@ if(!mongoDB)
 
 mongoose.set('strictQuery', false);
 
-app.set('port', process.env.PORT || process.env.APP_PORT || 3077);
+app.set('port', process.env.PORT || process.env.APP_PORT || 3055);
 
 app.use(express.json());
 

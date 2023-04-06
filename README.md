@@ -17,16 +17,16 @@ Este comando accede al servidor de MongoDB <br>
 con autenticación con los siguientes datos:
 +  Usuario: root
 +  Contraseña: secret
-+  Puerto: 27077
++  Puerto: 2755
   
 ```shell
-   mongo -u root -p secret  --port 27077
+   mongo -u root -p secret  --port 2755
 ```
 
 # Acceder a la base de datos con usuario por defecto (usario user_vagrant)
 
 ```shell
-   mongo mongodb://user_vagrant:pass@localhost:27077/db_vagrant?authSource=admin
+   mongo mongodb://user_vagrant:pass@localhost:2755/db_vagrant?authSource=admin
 ```
 
 
@@ -63,7 +63,7 @@ no contenga contenido de MongoDB (es decir, si no se ha inicializado MongoDB)
 # Crear un nuevo usario
 Este comando sirve para crear nuevos usuarios usando la base de datos admin
 ```shell
-   mongo mongodb://root:secret@localhost:27077/admin --authenticationDatabase=admin --eval "db.runCommand({createUser: 'myuser', pwd: 'mypassword', roles: [{ role: 'readWrite', db: 'mydatabase' }]})"
+   mongo mongodb://root:secret@localhost:2755/admin --authenticationDatabase=admin --eval "db.runCommand({createUser: 'myuser', pwd: 'mypassword', roles: [{ role: 'readWrite', db: 'mydatabase' }]})"
 ```
 
 # Acceder a la base de datos
@@ -72,10 +72,10 @@ Usando MongoDB con los siguientes datos de autenticación:
 +  Usuario: myuser
 +  Contraseña: mypassword
 +  Host: localhost
-+  Puerto: 27077
++  Puerto: 2755
 +  Base de datos: mydatabase
 +  Autorización: admin
 
 ```shell
-   mongo mongodb://myuser:mypassword@localhost:27077/mydatabase?authSource=admin
+   mongo mongodb://myuser:mypassword@localhost:2755/mydatabase?authSource=admin
 ```

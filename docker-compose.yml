@@ -15,7 +15,7 @@ services:
       # no contenga contenido de MongoDB (es decir, si no se ha inicializado MongoDB) 
       - /home/vagrant/workspace/data/create-user.js:/docker-entrypoint-initdb.d/create-user.js:ro
     ports:
-      - "27077:27017"
+      - "2755:27017"
     healthcheck:
       test: 'mongo --eval "db.runCommand({ ping: 1 })"'
       interval: 30s
@@ -35,9 +35,9 @@ services:
       - /home/max98/workspace/mongoose
       - /home/max98/workspace/mongoose/node_modules
     ports:
-      - "3077:3077"
+      - "3055:3055"
     healthcheck:
-      test: ["CMD", "curl", "-f", "http://localhost:3077"]
+      test: ["CMD", "curl", "-f", "http://localhost:3055"]
       interval: 30s 
       timeout: 10s
       retries: 5

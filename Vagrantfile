@@ -6,7 +6,7 @@
 
 Vagrant.configure("2") do |config|
     # Establecer el nombre de la caja 
-    config.vm.define "box-vagrant-mongodb"
+    config.vm.define "box-v-mongoose"
     #config.vm.hostname = "abc"
 
     # Usar la caja de Ubuntu 18.04LTS
@@ -22,10 +22,10 @@ Vagrant.configure("2") do |config|
     owner: "root", group: "root", create: true, disabled: true
 
     # Exponer el puerto interior de la caja ** Para Mongoose App  **
-    config.vm.network "forwarded_port", guest: 3077 , host: 3077, auto_correct: true
+    config.vm.network "forwarded_port", guest: 3055 , host: 3055, auto_correct: true
 
     # Exponer el puerto interior de la caja ** Para MongoDB  **
-    config.vm.network "forwarded_port", guest: 27077 , host: 27077, auto_correct: true
+    config.vm.network "forwarded_port", guest: 2755 , host: 2755, auto_correct: true
     
     # Instalar docker y descagar imagen de docker (node:14-alpine)
     # *OJO* : Corre solo una vez usando `vagrant up`
