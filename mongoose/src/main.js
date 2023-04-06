@@ -1,9 +1,13 @@
+require('dotenv').config();
 const express = require("express");
 const mongoose = require('mongoose');
 
 const app = express();
 
-const mongoDB = "mongodb://user_vagrant:pass@localhost:27077/db_vagrant?authSource=admin";
+let mongoDB = process.env.APP_DB_URI;
+
+if(!mongoDB)
+  mongoDB = `mongodb+srv://${user}:${password}@redesplus.guu0o.mongodb.net/${database}?retryWrites=true&w=majority`;
 
 mongoose.set('strictQuery', false);
 
