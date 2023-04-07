@@ -22,12 +22,25 @@ app.get("/", async (req, res) => {
   mongoose.connect(mongoDB, {
     useNewUrlParser: true,
     useUnifiedTopology: true
-  }).then(() => {
+  }).then((conn) => {
     console.log('Conexión exitosa a MongoDB');
-    return res.json({ message: "Conexion exitosa ✌️" });
-  }).catch((error) => {
+    const datos  = {
+      message: "Conexion exitosa ✌️",
+      uri : mongoDB,
+      nombre :  conn.connection.name,
+      host :  conn.connection.host,
+      puerto :  conn.connection.port,
+      usuario :  conn.connection.user,
+    }
+    return res.json(datos);
+  }).catch((conn, error) => {
     console.error('Error al conectar a MongoDB', error);
-    return res.json({ message: "Conexion sin exito 😪" });
+    const datos  = {
+      message: "Conexion sin exito 😪",
+      uri : mongoDB,
+      conexion :  conn,
+    }
+    return res.json(datos);
   });
 });
 
