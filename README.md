@@ -12,6 +12,23 @@ Para hacer funcionar la aplicación se requiere tener instalado, como requisito 
 * MongoDB
 * Browser (Google Chrome, Firefox, etc.)
 
+# Configuración App | Mongoose App
+Es necesario crear un archivo `.env` del proyecto de backend dentro del path **./mongoose**, opcionalmente puede hacer una copia del archivo `.env.example` con el nombre de **.env** que incluyen variables de entorno predeterminado o por default para funcionar con **docker-compose** y **vagrant**. <br> 
+
+### Variables de entorno para App | Mongoose App
+
+* __Variables de entorno (para servidor local)__ 
+  *  **API_PORT** *(Requerido)* Puerto para __service_mongoose__ por default es `3055`
+  *  **APP_DB_URI** *(Requerido)* <br/> Solo en caso de requerir usuario y contraseña, por ejemplo: `mongodb://<user>:<password>@<host>:<port>/<database>?<options>`. <br>
+  Este variable de entorno anula *APP_DB_USER*, *APP_DB_PASSWORD* y *APP_DB_DATABASE*. <br>
+  El URI por defecto es __mongodb://user_vagrant:pass@service_db/db_vagrant?authSource=admin__
+ 
+* __Variables de entorno (para servidor MongoDB Atlas)__
+  *  __APP_DB_USER__ *(Requerido)* Usuario proporcionado por MongoDB Atlas.
+  * __APP_DB_PASSWORD__ *(Requerido)* Contraseña proporcionado por MongoDB Atlas.
+  *  __APP_DB_DATABASE__ *(Requerido)* Nombre de la base de datos proporcionado por MongoDB Atlas
+  
+
 # Acceder a servidor MongoDB
 Este comando accede al servidor de MongoDB <br>
 con autenticación con los siguientes datos:
