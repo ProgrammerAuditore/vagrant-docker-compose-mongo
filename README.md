@@ -2,6 +2,12 @@
 Este repositorio contiene un proyecto con acciones/funciones de un base de datos para MongoDB <br>
 Usango Vagrant + Docker-compose
 
+# Screenshot
+
+![Preview 1](/screenshot/preview_01.jpg)
+
+![Preview 2](/screenshot/preview_02.jpg)
+
 # Requisitos funcionales
 Para hacer funcionar la aplicación se requiere tener instalado, como requisito lo siguiente:
 * NodeJS +14.x.x (o superior)
